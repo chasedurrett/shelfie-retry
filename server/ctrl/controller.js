@@ -19,10 +19,24 @@ module.exports = {
     const { id } = req.params;
     const db = req.app.get("db");
 
-    const data = await db.delete_product(id).catch((err) => {
-      res.status(500).send({ errorMessage: `Couldn't delete product, sorry!` });
-      console.log(err);
-    });
-    res.status(200).send(data);
-  },
+    const data = await db.delete_product(id)
+    if(data){
+      res.sendStatus(200)
+    }
+
+    res.status(500).send(`Could not delete product!`)
+  }, 
+  updateProduct: async (req, res) => {
+    const db = req.app.get('db')
+    const {id} = req.params
+    const {name, price, img} = req.body
+
+    const updatedProduct = await db.update_product([id, name, price, img])
+
+    if(updatedProduct){
+      return res.sendStatus(200)
+    }
+
+    res.status(500).send(`Could not update product`)
+  }
 };
