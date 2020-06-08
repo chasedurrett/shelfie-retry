@@ -1,0 +1,13 @@
+.product-container{
+    display: flex;
+    align-items: center;
+    background-color: rgb(189, 22, 22);
+    height: 200px;
+    margin: 20px;
+    border-radius: 5px;
+}
+.product-image{
+    height: 150px;
+    width: 150px;
+    margin-left: 40px;
+}

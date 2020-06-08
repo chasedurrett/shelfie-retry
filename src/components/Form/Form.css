@@ -1,0 +1,15 @@
+.form {
+  background-color: rgb(20, 194, 20);
+  height: 500px;
+  width: 400px;
+  border-radius: 5px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.img-preview {
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+}
